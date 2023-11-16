@@ -1,0 +1,177 @@
+{
+  "main": {
+    "id": "9b77edc44a439069",
+    "type": "split",
+    "children": [
+      {
+        "id": "47c8848c7794c4a3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c20f5c010e6f584b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Object Properties.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d97b6b65b1b450ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Classes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bf30a5a0ce430b93",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b79145df9025b44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "753fc9b29d071ca9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c56d2a8ea366ee17",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "77bc7c76d683edc8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "95f078bad74e4986",
+    "type": "split",
+    "children": [
+      {
+        "id": "23e39f05bcbd3a32",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b52ce0684bf39bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Classes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c3cf5bc1bf0fe743",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Classes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a1bd5ba6d984e476",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8d0f5d556fb86de8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Classes.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d97b6b65b1b450ea",
+  "lastOpenFiles": [
+    "Object Properties.md",
+    "Classes.md",
+    "images/Pasted image 20231115101359.png",
+    "images/Pasted image 20231115101151.png",
+    "images/Pasted image 20231115101110.png",
+    "images/Pasted image 20231115100240.png",
+    "images/Pasted image 20231115094552.png",
+    "images",
+    "images/Pasted image 20231115094913.png",
+    "Markdown Keys.md",
+    "languages.md",
+    "General.md"
+  ]
+}
