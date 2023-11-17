@@ -8,7 +8,16 @@ Opponents argue that **class** is basically just *syntactic sugar* over the exis
 
 Despite the controversy, classes are beginning to show up in code bases and you are certainly going to encounter classes when uses [[frameworks]] such as React.
 
+## Class Basic Syntax
 
+The basic syntax is:
+![[Pasted image 20231116132510.png]]
+Then you can use `new MyClass()` to create a new object with all of the listed methods.
+
+The `constructor()` method is called automatically by **new**, so we can initialize the object there.
+
+### Static Methods & Properties
+A static method is one that belongs to the original class, but is not creating and used in each individual instance. Similarly, you can set up a static property, although they are not officially adopted in [[ES6]]. Static properties are common in [[React]], and in order to interact with them, we use [[Babel]]. Babel can help you when using *unofficial* properties in ES6.
 ## Lesson Overview
 
 #### Describe the pros and cons of using classes in JavaScript.
