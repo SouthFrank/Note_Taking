@@ -84,12 +84,26 @@ The class field `click = () => {...}` is created on a per-object basis, there's 
 
 That's especially useful in browser environment, for [[event listeners]].
 
-### Static Methods & Properties
+#### Static Methods & Properties
 A static method is one that belongs to the original class, but is not creating and used in each individual instance. Similarly, you can set up a static property, although they are not officially adopted in [[ES6]]. Static properties are common in [[React]], and in order to interact with them, we use [[Babel]]. Babel can help you when using *unofficial* properties in ES6.
 ## Lesson Overview
 
 #### Describe the pros and cons of using classes in JavaScript.
+##### Pros
+- Class is something everyone learns and making the syntax better is a good thing.
+- It's an optional feature and there are other ways to create objects like factory functions.
+- Using it for limited purposes is fine.
+- Useful to know for React.
+##### Cons
+- Conceptually, there is No Class in JavaScript
+	- In JS, there is no overhead and constraints of needing a Class to use object. Further "prototype"-chain based inheritance can wire up any object to any other object that may not be related. So it's very flexible compared to Classes.
+- Bad for Functional Programming
+	- There is a notion of favoring composition over inheritance. But with classes we are going in the opposite direction because "Class" notation favors "Inheritance over Composition".
+- Concept of classes makes things brittle. Prototypes are better and very flexible.
+
 #### Briefly discuss how JavaScript’s object creation differs from a language like Java or Ruby.
+- In Java, objects need a blueprint or DNA to exist called Class. It's similar to living things needing DNA to exist. 
+	- In JS, object just show up without the need for "Classes" (i.e. no blueprint or DNA). They are similar to "nonliving things" that can be created or invented. But they come with a plug/socket mechanism called "prototype" that can be used to wire up different object.
 #### Explain the differences between an object constructor and a class.
 #### Explain what “getters” and “setters” are.
 There are two kinds of [[Object Properties]].
@@ -110,7 +124,17 @@ let obj = {
 ```
 In the above example, the **getter** works when obj.propName is read, the **setter** works when it is assigned a new value.
 #### Understand what computed names and class fields are.
+- **Computed Names** are when a computation is made within `[]` brackets to determine the name of a method or property. `['say' + 'Hi'](){alert('hello')}`
+- **Class Fields** allow you to set properties within the original class. However, they are not available in the prototype and are only available on each created object.
+
+#### Explain what a static property or method is
+- Classes can have static methods and properties, which are properties and methods that are accessed on the class itself and not on the instances of a class. This is similar to how string methods are accessed on the instance of a string itself e.g. `someString.slice(0,5)` whereas some methods are called on the String constructor directly e.g. `String.fromCharCode(79,100,105,110)`.
 #### Explain how to implement private class fields and methods.
+- Private properties get created by using a hash `#` prefix and cannot be legally referenced outside of the class. The privacy encapsulation of these class properties is enforced by JavaScript itself.
 #### Describe function binding.
+- **Function binding** is when you bind a method or function on a per-object basis. Since the context of `this` changes, it can prevent the "losing of `this`".
 #### Use inheritance with classes.
+- Classes use the **extends** keyword in class declarations or class expressions to create a class as a child of another constructor (either a class or a function).
+- The **super** keyword is used to call corresponding methods of a super class.
 #### Understand why composition is generally preferred to inheritance.
+- **Composition over inheritance (or composite reuse principle)** in object-oriented programming (OOP) is the principle that classes should favor polymorphic behavior and code reuse by their **composition** (by containing instances of other classes that implement the desired functionality) over **inheritance** from a base or parent class. Ideally all reuse can be achieved by assembling existing components, but in practice inheritance is often needed to make new ones. Therefore, inheritance and object composition typically work hand-in-hand.
