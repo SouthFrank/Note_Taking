@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "147f500aae263853",
@@ -159,24 +158,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4fd230e41f723256",
+  "active": "704aa2a7daac107a",
   "lastOpenFiles": [
+    "Untitled 1",
+    "Untitled",
+    "WebDev/images/Pasted image 20231119115456.png",
+    "WebDev/images/Pasted image 20231119115119.png",
+    "WebDev/images/Pasted image 20231119115050.png",
+    "WebDev/images/Pasted image 20231119114845.png",
+    "WebDev/images/Pasted image 20231119114237.png",
     "Tools and Technologies.md",
     "ES6 Module.md",
-    "Pasted image 20231119100703.png",
-    "Pasted image 20231119100527.png",
+    "WebDev/images/Pasted image 20231119100703.png",
+    "WebDev/images/Pasted image 20231119100527.png",
     "WebDev/Classes.md",
-    "Pasted image 20231119093016.png",
-    "Pasted image 20231118104750.png",
+    "WebDev/images/Pasted image 20231119093016.png",
+    "WebDev/images/Pasted image 20231118104750.png",
     "WebDev/General.md",
     "Pasted image 20231116132510.png.md",
     "WebDev/prototypes.md",
     "WebDev/images/Pasted image 20231117111258.png",
-    "WebDev/images/Pasted image 20231117111006.png",
-    "WebDev/images/Pasted image 20231117110806.png",
-    "WebDev/images/Pasted image 20231117110741.png",
-    "WebDev/images/Pasted image 20231117110639.png",
-    "WebDev/images/Pasted image 20231117110601.png",
     "WebDev/Terms and Phrases.md"
   ]
 }

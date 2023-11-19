@@ -26,10 +26,30 @@ This is all great for node.js. but if you tried to use the above code in the bro
 
 This is where a [[module bundler]] comes in. A JavaScript module bundler is a tool that gets around the problem with a build step (which has access to the file system) to create a final output that is browser compatible (which doesn't need access to the file system). In this case, we need a module bundler to find all `require` statements (which is invalid browser JavaScript syntax) and replace them with the actual contents of each required file. The final result is a single bundled JavaScript file (with no require statements)!
 
+### Webpack Workflow
+
 Let's take a look at how to use [[webpack]] to get the above `require('moment')` example working in the browser. First we need to install webpack into the project. Webpack itself is an npm package, so we can install it from the command line:
 ![[Pasted image 20231119100527.png]]
 Note that we are installing two packages - webpack and webpack-cli (which enables you to use webpack from the command line). Also note the `--save-dev` argument - this saves it as a development dependency, which means it's a package that you need in your development environment but not on your production server. You can see this reflected in the `package.json` file, which was automatically updated:
 ![[Pasted image 20231119100703.png]]
+Now we have webpack and webpack-cli installed as packages in the `node_modules` folder. You can use webpack-cli from the command line as follows:
+![[Pasted image 20231119114237.png]]
+This command will run the webpack tool that was installed in the `node_modules` folder, start with the index.js file, fine any `require` statements, and replace them with the appropriate code to create a single output file (which by default is `dist/main.js`). The `--mode=development` argument is to keep the JavaScript readable for developers, as opposed to a minified output with the argument `--mode=production`.
+
+Now that we have webpack's `dist/main.js` output, we are going to use it instead of `index.js` in the browser, as it contains invalid require statements. This would be reflect in the `index.html` file as follow:
+![[Pasted image 20231119114845.png]]
+If you refresh the browser, you should see that everything is working as before!
+
+Note that we'll need to run the webpack command each time we change `index.js`. This is tedious, and will get even more tedious as we use webpack's more advanced features (like generating source maps to help debug the original code from the transpiled code). Webpack can read options from a config file in the root directory of the project name `webpack.config.js`, which in our case would look like:
+![[Pasted image 20231119115050.png]]
+Now each time we change `index.js`, we can run webpack with the command:
+![[Pasted image 20231119115119.png]]
+We don't need to specify the `index.js` and `--mode=development` options anymore, since webpack is loading those options from the `webpack.config.js` file. This is better, but it's still tedious to enter this command for each code change - we'll make this process smoother in a bit.
+
+- Overall this may not seem like much, but there are some huge advantages to this workflow. We are no longer loading external scripts via global variables. Any new JavaScript libraries will be added using `require` statements in the JavaScript, as opposed to adding new `<script>` tags in the HTML. Having a single JavaScript bundle file is often better for performance. And now that we added a build step, there are some other powerful features we can add to our development workflow!
+
+![[Pasted image 20231119115456.png]]
+
 
 ## Lesson Overview
 #### Explain what npm is and where it was commonly used before being adopted on the frontend.
@@ -60,6 +80,25 @@ Note that we are installing two packages - webpack and webpack-cli (which enable
 		- Side note: [[tree shaking]] is a technique used in JS module bundlers to eliminate dead (unused or unreachable) code from the final bundled output. The term "tree shaking" comes from the concept of shaking a tree to make dead leaves fall, leaving only the necessary ones.
 #### Explain what the concepts "entry" and "output" mean as relates to webpack.
 #### Briefly explain what a development dependency is.
+- A "development dependency" refers to a software package or library that is necessary for the development and build process of a project but is not required for the runtime execution of the application. These dependencies are tools, libraries, or modules that assist developers during the development phase, such as in building, testing and maintaining a codebase.
+- When someone is working on a project, they install both regular dependencies and development dependencies. However, when the application is deployed or run in a production environment, only the regular dependencies are typically installed.
+
+#### Common examples of development dependencies
+1. Build Tools:
+	- Module bundlers like Webpack, Rollup, or Parcel.
+	- Task runners like Gulp or Grunt.
+	- Transpilers like Babel (when used for development purposes).
+2. Testing Libraries:
+    - Testing frameworks like Jest, Mocha, or Jasmine.
+    - Assertion libraries like Chai.
+3. Linters:
+    - Code quality tools like ESLint or TSLint.
+4. Mocking Libraries:
+    - Libraries for mocking data or APIs during development, such as json-server or Mirage.js.
+5. Development Servers:
+    - Local development servers like webpack-dev-server or Express.js (when used for development purposes).
+6. Documentation Tools:
+    - Documentation generators like JSDoc or tools for generating API documentation.
 #### Explain what "transpiling code" means and how it relates to front-end development.
 #### Briefly describe what a task runner is an how it's used in front-end development.
 #### Describe how to write an npm automation script.
