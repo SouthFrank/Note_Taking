@@ -51,6 +51,68 @@ We don't need to specify the `index.js` and `--mode=development` options anymore
 ![[Pasted image 20231119115456.png]]
 
 
+## Transpiling code for new language features (babel)
+
+Transpiling code means converting the code in one language to code in another similar language. This is an important part of frontend development — since browsers are slow to add new features, new languages were created with experimental features that transpile to browser compatible languages.
+
+For CSS, there's [[Sass]], [[Less]], and [[Stylus]], to name a few. 
+For JavaScript, the most popular transpiler for awhile was CoffeeScript (released around 2010), whereas nowadays most people use [[babel]] or [[TypeScript]].
+
+[[CoffeeScript]] is a language focused on improving JavaScript by significantly changing the language - optional parentheses, significant whitespace, etc. 
+[[Babel]] is not a new language but a transpiler that transpiles next generation JavaScript with features not yet available to all browsers (ES2015 and beyond) to older more compatible JavaScript (ES5).
+[[TypeScript]] is a language that is essentially identical to next generation JavaScript, but also adds optional static typic. Many people choose to use [[babel]] because it's the closest to Vanilla JavaScript.
+
+Let's look at an example of how to use babel with our existing webpack build step. First we'll install babel (which is an npm package) into the project from the command line:
+![[Pasted image 20231119162538.png]]
+Note that we're installing 3 separate packages as dev dependencies:
+1. `@babel/core` is the main part of babel
+2. `@babel/preset-env` is a preset defining which new JavaScript features to transpile
+3. `@babel-loader` is a package to enable babel to work with webpack
+
+We can configure webpack to use `babel-loader` by editing the `webpack.config.js` file as follows:
+![[Pasted image 20231119162758.png]]
+This syntax looks confusing, but fortunately it's not something we'll be editing often. Basically, we are telling webpack to look for an .js files (excluding ones in the `node_modules` folder) and apply babel transpilation using `babel-loader` with the `@babel/preset-env` preset. 
+
+Now that everything's set up, we can start writing ES2015 features in our JavaScript. Here's an example of an ES2015 template string in the `index.js` file:
+![[Pasted image 20231119164151.png]]
+We can also use the ES2015 import statement instead of `require` for loading modules, which is what you'll see in a lot of codebases today:
+![[Pasted image 20231119164242.png]]
+In this example, the `import` syntax isn't much different from the `require` syntax, but `import` has extra flexibility for more advanced cases. Since we changed `index.js`, we need to run webpack again in the command line:
+![[Pasted image 20231119164345.png]]
+While this particular example may not be too exciting, the ability to transpile code is a very powerful one.
+
+If we're concerned about performance, we should be [[minifying]] the bundle file, which should be easy enough since we're already incorporating a build step. We also need to re-run the webpack command each time we change the JavaScript, which gets old quickly. So the next thing we'll look at are some convenience tools to solve these issues.
+
+## Using a task runner (npm scripts)
+Now that we’re invested in using a build step to work with JavaScript modules, it makes sense to use a task runner, which is a tool that automates different parts of the build process. For frontend development, tasks include minifying code, optimizing images, running tests, etc.
+
+Let's write some npm scripts to make using webpack easier. This involves simply changing the `package.json` file as follows:
+![[Pasted image 20231119165134.png]]
+Here we've added two new scripts, `build` and `watch`. To run the build script, you can enter in the command line:
+![[Pasted image 20231119165216.png]]
+This will run webpack (using configuration from the `webpack.config.js` we made earlier) with the `--progress` option to show the percent progress and the `--mode=production` option to minimize the code for production. To run the `watch` script:
+![[Pasted image 20231119165351.png]]
+This uses the `--watch` option instead to automatically re-run webpack each time any JavaScript file changes, which is great for development.
+
+Note that scripts in `package.json` can run webpack without having to specify the full path, since node.js knows the location of each npm module path. 
+We can make things even sweeter by installing webpack-dev-server, a separate tool which provides a simple web server with live reloading. To install it as a development dependency, enter the command:
+![[Pasted image 20231119165557.png]]
+Then add an npm script to `package.json`:
+![[Pasted image 20231119165618.png]]
+Now you can start your derv server by running the command:
+![[Pasted image 20231119165640.png]]
+This will automatically open the `index.html` website in your browser with an address of `localhost:8080` (by default). Any time you change your JavaScript in `index.js`, webpack-dev-server will rebuild its own bundled JavaScript and refresh the browser automatically. This is a useful time saver, as it allows you to keep your focus on the code instead of having to continually switch contexts between the code and the browser to see new changes.
+
+This is only scratching the surface, there are plenty more options with both webpack and webpack-dev-server (which you can read about [here](https://webpack.js.org/guides/development/)). You can of course make npm scripts for running other tasks as well, such as converting Sass to CSS, compressing images, running tests — anything that has a command line tool is fair game.
+
+## Conclusion
+So this is modern JavaScript in a nutshell. We went from plain HTML and JS to using **a package manager** to automatically download 3rd party packages, **a module bundler** to create a single script file, a **transpiler** to use future JavaScript features, and **a task runner** to automate different parts of the build process. Definitely a lot of moving pieces here, especially for beginners. Web development used to be a great entry point for people new to programming precisely because it was so easy to get up and running; nowadays it can be quite daunting, especially because the various tools tend to change rapidly.
+
+Still, it’s not as bad as it seems. Things are settling down, particularly with the adoption of the node ecosystem as a viable way to work with the frontend. It’s nice and consistent to use npm as a package manager, node `require` or `import` statements for modules, and npm scripts for running tasks. This is a vastly simplified workflow compared to even a year or two ago!
+
+Even better for beginners and experienced developers alike is that frameworks these days often come with tools to make the process easier to get started. Ember has [`ember-cli`](https://ember-cli.com/), which was hugely influential on Angular’s [`angular-cli`](https://cli.angular.io/), React’s [`create-react-app`](https://github.com/facebookincubator/create-react-app), Vue’s [`vue-cli`](https://github.com/vuejs/vue-cli), etc. All these tools will set up a project with everything you need — all you need to do is start writing code. However, these tools aren’t magic, they simply set everything up in a consistent and working fashion — you may often get to a point where you need to do some extra configuration with webpack, babel, etc. So it’s still very critical to understand what each piece does as we’ve covered in this article.
+
+Modern JavaScript can definitely be frustrating to work with as it continues to change and evolve at a rapid pace. But even though it may seem at times like re-inventing the wheel, JavaScript’s rapid evolution has helped push innovations such as hot reloading, real-time linting, and time-travel debugging. It’s an exciting time to be a developer, and I hope this information can serve as a roadmap to help you on your journey!
 ## Lesson Overview
 #### Explain what npm is and where it was commonly used before being adopted on the frontend.
 
@@ -100,7 +162,12 @@ We don't need to specify the `index.js` and `--mode=development` options anymore
 6. Documentation Tools:
     - Documentation generators like JSDoc or tools for generating API documentation.
 #### Explain what "transpiling code" means and how it relates to front-end development.
+- Transpiling code means converting the code in one language to code in another similar language. This is an important part of frontend development - since browsers are slow to add new features, new languages were created with experimental features that transpile to browser compatible languages.
 #### Briefly describe what a task runner is an how it's used in front-end development.
+- A task runner is a tool that automates different parts of the build process. 
+- For frontend development, tasks include minifying code, optimizing images, running tests, etc.
+- In 2013, Grunt was the most popular frontend task runner, with Gulp following shortly after. Both rely on plugins that wrap other command line tools. Nowadays the most popular choice seems to be using the scripting capabilities built into the npm package manager itself, which doesn't use plugins but instead works with other command line tools directly.
 #### Describe how to write an npm automation script.
+- The script has to be added to the `package.json` file, then it can be run from the command line. For example, `npm run build`.
 #### Explain one of the main benefits of writing code in modules.
 #### Explain "named" exports and "default" exports.

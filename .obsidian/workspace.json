@@ -11,11 +11,29 @@
             "id": "4fd230e41f723256",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "ES6 Module.md",
-                "mode": "source",
-                "source": false
+                "file": "WebDev/images/Pasted image 20231119162538.png"
+              }
+            }
+          },
+          {
+            "id": "92941d457fd728b0",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "WebDev/images/Pasted image 20231119162758.png"
+              }
+            }
+          },
+          {
+            "id": "2ea6c69f27b0f118",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "WebDev/images/Pasted image 20231119164151.png"
               }
             }
           },
@@ -31,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ES6 Module.md",
+                "file": "WebDev/images/Pasted image 20231119164151.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ES6 Module.md",
+                "file": "WebDev/images/Pasted image 20231119164151.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ES6 Module.md"
+                "file": "WebDev/images/Pasted image 20231119164151.png"
               }
             }
           }
@@ -160,24 +179,25 @@
   },
   "active": "704aa2a7daac107a",
   "lastOpenFiles": [
+    "WebDev/images/Pasted image 20231119162758.png",
+    "WebDev/images/Pasted image 20231119162538.png",
+    "ES6 Module.md",
+    "WebDev/images/Pasted image 20231119165640.png",
+    "WebDev/images/Pasted image 20231119165618.png",
+    "WebDev/images/Pasted image 20231119165557.png",
+    "WebDev/images/Pasted image 20231119165351.png",
+    "WebDev/images/Pasted image 20231119165216.png",
+    "WebDev/images/Pasted image 20231119165134.png",
+    "Tools and Technologies.md",
+    "WebDev/images/Pasted image 20231119164345.png",
+    "WebDev/images/Pasted image 20231119164242.png",
+    "WebDev/images/Pasted image 20231119164151.png",
     "Untitled 1",
     "Untitled",
-    "WebDev/images/Pasted image 20231119115456.png",
-    "WebDev/images/Pasted image 20231119115119.png",
-    "WebDev/images/Pasted image 20231119115050.png",
-    "WebDev/images/Pasted image 20231119114845.png",
-    "WebDev/images/Pasted image 20231119114237.png",
-    "Tools and Technologies.md",
-    "ES6 Module.md",
-    "WebDev/images/Pasted image 20231119100703.png",
-    "WebDev/images/Pasted image 20231119100527.png",
     "WebDev/Classes.md",
-    "WebDev/images/Pasted image 20231119093016.png",
-    "WebDev/images/Pasted image 20231118104750.png",
     "WebDev/General.md",
     "Pasted image 20231116132510.png.md",
     "WebDev/prototypes.md",
-    "WebDev/images/Pasted image 20231117111258.png",
     "WebDev/Terms and Phrases.md"
   ]
 }
