@@ -5,11 +5,54 @@ Before we can really use these modules, we're going to have to learn about [[npm
 
 Modules themselves are simple to implement, so we're going to take this chance to learn about a few other things.
 
-## JavaScript package managers (npm)
+## JavaScript package managers
 - Starting around 2010, several competing JavaScript package managers emerged to help automate the process of downloading and upgrading libraries from a central repository. [[Bower]] was arguably the most popular in 2013, but eventually was overtaken by [[npm]] around 2015. 
 	- It's worth noting that starting around late 2016, [[yarn]] has picked up a lot of traction as an alternative to npm's interface, but it still uses npm packages under the hood.
 - npm was originally a package manager made specifically for [[node.js]], a JavaScript runtime designed to run on the server, not the frontend.
 	- Using package managers generally involves using a command line, which in the past was never required as a frontend dev. 
+## npm (node package manager)
+
+### Introduction
+
+The node package manager is a command-line tool that gives you access to a gigantic repository of plugins, libraries and tools. npm is the world's largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+
+npm consists of three distinct components:
+- the website
+- the Command Line Interface (CLI)
+- the registry
+
+Use the website to discover packages, set up profiles, and manage other aspects of your npm experience. For example, you can set up organizations to manage access to public or private packages.
+
+The CLI runs from a terminal, and is how most developers interact with npm.
+
+The registry is a large public database of JavaScript software and the meta-information surrounding it.
+
+### Downloading and Installing Packages Locally
+
+You can install a package locally if you want to depend on the package from your own module, using something Node.js `require`. This is `npm install`'s default behavior.
+
+#### Scopes and package visibility
+- Unscoped packages are always public.
+- [Private packages](https://docs.npmjs.com/about-private-packages) are always scoped.
+- Scoped packages are private by default; you must pass a command-line flag when publishing to make them public.
+#### Installing an unscoped package
+Unscoped packages are always public, which means they can be searched for, downloaded, and installed by anyone. To install a public package, on the command line, run `npm install <package name>`. This will create the `node_modules` directory in your current directory (if one doesn't exist yet) and will download the package to that directory.
+
+#### Installing a scoped package
+Scoped public packages can be downloaded and installed by anyone, as long as the scope name is referenced during installion:
+`npm install  @scope/package-name`
+
+#### Installing a private package
+Private packages can only be downloaded and installed by those who have been granted read access to the package. Since private packages are always scoped, you must reference the scope name during installion:
+`npm install @scope/private-package-name`
+
+#### Testing package installation
+To confirm that `npm install` worked correctly, in your module directory, check that a `node_modules` directory exists and that it contains a directory for the packages you installed:
+`ls node_modules`
+
+#### Installing a package with dist-tags
+Like `npm publish`, `npm install <package_name>` will use the latest tag by default. To override this behavior, use `npm install <package_name><@tag>`. For example, to install the `example-package` at the version tagged with `beta`, you would run the following command:
+`npm install example-package@beta`
 
 ## JavaScript module bundlers (webpack)
 Most programming languages provide a way to import code from one file to another. As JS was designed to only run in the browser, with no access to the file system of the client's computer (for security reasons), it didn't originally have this feature. So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.
@@ -171,3 +214,4 @@ Modern JavaScript can definitely be frustrating to work with as it continues to 
 - The script has to be added to the `package.json` file, then it can be run from the command line. For example, `npm run build`.
 #### Explain one of the main benefits of writing code in modules.
 #### Explain "named" exports and "default" exports.
+

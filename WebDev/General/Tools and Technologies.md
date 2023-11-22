@@ -43,3 +43,15 @@
 	- In 2013, Grunt was the most popular task runner.
 - Gulp
 	- Followed shortly after Grunt.
+
+#### Package Managers
+- [[npm]]:
+	- npm (node package manager), is undoubtedly the most popular package manager right now.
+	- It is used for both server-side and client-side (front end) JavaScript projects.
+	- Key features: large package registry, dependency management, and script running.
+- [[Yarn]]:
+	- The second most popular package manager, used as an alternative to npm. It was created by Facebook and is designed to be fast, reliable, and secure. Yarn uses a deterministic dependency resolution algorithm.
+	- Key features: Deterministic installs, offline capabilities, and improved performance.
+- [[Bower]]:
+	- Bower was historically popular for managing front-end components, such as JavaScript libraries and CSS frameworks. However, it is considered somewhat legacy, and its usage has decreased with the rise of npm and Yarn.
+	- Key features: Front-end package management, versioning, and asset downloading.
