@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ES6 Module.md",
+                "file": "WebDev/Basics/JavaScript Basics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3cf5a189e4059704",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/Basics/JavaScript Basics.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ES6 Module.md",
+                "file": "WebDev/Basics/JavaScript Basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ES6 Module.md",
+                "file": "WebDev/Basics/JavaScript Basics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ES6 Module.md"
+                "file": "WebDev/Basics/JavaScript Basics.md"
               }
             }
           }
@@ -146,28 +159,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b3c8cfe91e51238f",
+  "active": "704aa2a7daac107a",
   "lastOpenFiles": [
-    "WebDev/General/Terms and Phrases.md",
+    "WebDev/images/Pasted image 20231123092051.png",
+    "WebDev/images/Pasted image 20231123091924.png",
+    "WebDev/images/Pasted image 20231123091846.png",
+    "WebDev/images/Pasted image 20231123091707.png",
+    "WebDev/Basics/Array Methods.md",
+    "WebDev/images/Pasted image 20231123090305.png",
+    "WebDev/images/Pasted image 20231123090155.png",
     "WebDev/Basics/JavaScript Basics.md",
-    "WebDev/images/Pasted image 20231121111734.png",
+    "WebDev/images/Pasted image 20231122102332.png",
+    "WebDev/images/Pasted image 20231122102249.png",
+    "WebDev/images/Pasted image 20231122102202.png",
+    "WebDev/images/Pasted image 20231122101216.png",
+    "WebDev/images/Pasted image 20231122100803.png",
+    "WebDev/Basics/String Methods.md",
     "ES6 Module.md",
+    "WebDev/General/Terms and Phrases.md",
     "WebDev/General/Tools and Technologies.md",
-    "WebDev/images/Pasted image 20231121105640.png",
-    "WebDev/images/Pasted image 20231121105345.png",
-    "WebDev/images/Pasted image 20231121104641.png",
-    "WebDev/images/Pasted image 20231121104257.png",
     "WebDev/General/Markdown Keys.md",
     "WebDev/General/languages.md",
     "WebDev/General",
     "WebDev/General.md",
     "WebDev/Basics",
     "README.md",
-    "WebDev/images/Pasted image 20231119162758.png",
-    "WebDev/images/Pasted image 20231119164151.png",
-    "WebDev/images/Pasted image 20231119162538.png",
-    "WebDev/images/Pasted image 20231119165640.png",
-    "WebDev/images/Pasted image 20231119165618.png",
     "Untitled 1",
     "WebDev/Classes.md",
     "Pasted image 20231116132510.png.md",

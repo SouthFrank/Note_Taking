@@ -41,3 +41,44 @@ If you require arbitrary precision work with extremely large numbers, use the `b
 #### Rounding
 There is a built-in global object called `Math` that provides various rounding functions. For example, you can round down (`floor`) or round up (`ceil`) decimal numbers to the nearest whole number.
 ![[Pasted image 20231121111734.png]]
+
+## Booleans
+A boolean represents one of two values: `true` or `false`. Logical operators (`!`, `&&`, `||`) are typically used with boolean values and they return a boolean value.
+## Strings
+A **string** is the JavaScript data type to store text data.
+
+You create a string by wrapping the text in single quotes or double quotes. 
+![[Pasted image 20231122092117.png]]
+
+#### Strings as Lists of Characters
+A string can be treated as a list of characters where the first character has index `0`. You can access an individual character of the string using square brackets and the index of the letter you want to retrieve.
+`'cat'[1]` //a
+You can determine the number of characters in a string by accessing the `length` property.
+`'cat'.length` //3
+The simplest way to concatenate strings is to use the addition operator `+`.
+`'I like' + ' ' + 'cats.'`; // "I like cats."
+
+Strings provide a lot of helper methods, called [[String Methods]].
+## Arrays
+In JavaScript, an array is a list-like structure with no fixed length which can hold any type of primitives or objects, even in mixed types.
+
+To create an array, add elements between square brackets `[]`. To read from the array, put the index in square brackets `[]` after the identifier. The indices of an array starts at zero. For example:
+![[Pasted image 20231122095638.png]]
+To retrieve the number of elements that are in an array, use the `length` property:
+![[Pasted image 20231122100803.png]]
+To change an element in the array, you assign a value at the index:
+![[Pasted image 20231122101216.png]]
+Some of the [methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) that are available on every Array object can be used to add or remove from the array. [[Array Methods]] are important to learn, they allow manipulation of data in many different scenarios.
+
+
+## Conditionals & Operators
+A common way to conditionally execute logic in JS is the if-statement. The code block will only be executed if the condition evaluates to `true`.
+![[Pasted image 20231123091707.png]]
+
+#### Comparison Operators
+In JavaScript, numbers can be compared using the following relational and equality operators:
+![[Pasted image 20231123091846.png]]
+The comparison result is always a [[boolean]]: `true` or `false`:
+![[Pasted image 20231123091924.png]]
+In JavaScript, the comparison operators above can also be used to compare strings. In that case, a dictionary (lexicographical) order is applied. You can find a list of the exact order of all the characters [here](https://www.fileformat.info/info/charset/UTF-16/list.htm).
+![[Pasted image 20231123092051.png]]
