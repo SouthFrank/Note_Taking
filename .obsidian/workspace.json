@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b3c8cfe91e51238f",
+            "id": "3cf5a189e4059704",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,19 +20,31 @@
             }
           },
           {
-            "id": "3cf5a189e4059704",
+            "id": "857c2e63d17d87f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md",
+                "file": "WebDev/Objects/Classes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ccf916753daedbab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md",
+                "file": "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md",
+                "file": "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md"
+                "file": "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md"
               }
             }
           }
@@ -161,23 +173,27 @@
   },
   "active": "704aa2a7daac107a",
   "lastOpenFiles": [
-    "WebDev/images/Pasted image 20231123092051.png",
-    "WebDev/images/Pasted image 20231123091924.png",
-    "WebDev/images/Pasted image 20231123091846.png",
-    "WebDev/images/Pasted image 20231123091707.png",
-    "WebDev/Basics/Array Methods.md",
-    "WebDev/images/Pasted image 20231123090305.png",
-    "WebDev/images/Pasted image 20231123090155.png",
+    "WebDev/Objects/Classes.md",
+    "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
+    "WebDev/Modules, npm, Bundlers, Transpilers",
+    "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
+    "WebDev/Objects",
+    "WebDev/images/Pasted image 20231126115047.png",
+    "WebDev/images/Pasted image 20231126114934.png",
+    "WebDev/images/Pasted image 20231126114806.png",
+    "WebDev/images/Pasted image 20231126114554.png",
+    "WebDev/images/Pasted image 20231126114317.png",
+    "WebDev/images/Pasted image 20231126113408.png",
+    "WebDev/images/Pasted image 20231126113338.png",
+    "WebDev/images/Pasted image 20231126113148.png",
+    "WebDev/images/Pasted image 20231126113026.png",
+    "WebDev/images/Pasted image 20231126113002.png",
     "WebDev/Basics/JavaScript Basics.md",
-    "WebDev/images/Pasted image 20231122102332.png",
-    "WebDev/images/Pasted image 20231122102249.png",
-    "WebDev/images/Pasted image 20231122102202.png",
-    "WebDev/images/Pasted image 20231122101216.png",
-    "WebDev/images/Pasted image 20231122100803.png",
-    "WebDev/Basics/String Methods.md",
-    "ES6 Module.md",
-    "WebDev/General/Terms and Phrases.md",
+    "WebDev/Basics/Conditionals & Operators.md",
     "WebDev/General/Tools and Technologies.md",
+    "WebDev/Basics/Array Methods.md",
+    "WebDev/Basics/String Methods.md",
+    "WebDev/General/Terms and Phrases.md",
     "WebDev/General/Markdown Keys.md",
     "WebDev/General/languages.md",
     "WebDev/General",
@@ -185,8 +201,7 @@
     "WebDev/Basics",
     "README.md",
     "Untitled 1",
-    "WebDev/Classes.md",
     "Pasted image 20231116132510.png.md",
-    "WebDev/prototypes.md"
+    "WebDev/Objects/prototypes.md"
   ]
 }

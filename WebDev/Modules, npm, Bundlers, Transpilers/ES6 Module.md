@@ -77,7 +77,7 @@ Note that we are installing two packages - webpack and webpack-cli (which enable
 ![[Pasted image 20231119100703.png]]
 Now we have webpack and webpack-cli installed as packages in the `node_modules` folder. You can use webpack-cli from the command line as follows:
 ![[Pasted image 20231119114237.png]]
-This command will run the webpack tool that was installed in the `node_modules` folder, start with the index.js file, fine any `require` statements, and replace them with the appropriate code to create a single output file (which by default is `dist/main.js`). The `--mode=development` argument is to keep the JavaScript readable for developers, as opposed to a minified output with the argument `--mode=production`.
+This command will run the webpack tool that was installed in the `node_modules` folder, start with the index.js file, find any `require` statements, and replace them with the appropriate code to create a single output file (which by default is `dist/main.js`). The `--mode=development` argument is to keep the JavaScript readable for developers, as opposed to a minified output with the argument `--mode=production`.
 
 Now that we have webpack's `dist/main.js` output, we are going to use it instead of `index.js` in the browser, as it contains invalid require statements. This would be reflect in the `index.html` file as follow:
 ![[Pasted image 20231119114845.png]]
@@ -93,6 +93,61 @@ We don't need to specify the `index.js` and `--mode=development` options anymore
 
 ![[Pasted image 20231119115456.png]]
 
+
+## Webpack Workflow Tutorial
+First, create a directory, initialize npm, install webpack locally, and install the `webpack-cli` (the tool used to run webpack on the command line):
+![[Pasted image 20231124104725.png]]
+![[Pasted image 20231124104932.png]]
+We also need to adjust our `package.json` file in order to make sure we mark our package as `private`, as well as removing the `main` entry. This is to prevent an accidental publish of your code.
+![[Pasted image 20231124105130.png]]
+In this example, there are implicit dependencies between the `<script>` tags. Our `index.js` file depends on `lodash` being included in the page before it runs. This is because `index.js` never explicitly declared a need for `lodash`; it assumes that the global variable `__` exists.
+
+There are problems with managing JavaScript projects this way:
+- It is not immediately apparent that the script depends on an external library.
+- If a dependency is missing, or included in the wrong order, the application will not function properly.
+- If a dependency is included but not used, the browser will be forced to download unnecessary code.
+
+Let's use `webpack` to manage these scripts instead.
+#### Creating a Bundle
+First we'll tweak our directory structure slightly, separating the "source" code (`./src`) from our "distribution" code (`./dist`). The "source" code is the code that we'll write and edit. The "distribution" code is the minimized and optimized `output` of our build process that will eventually be loaded in the browser. Tweak the directory structure as follows:
+
+![[Pasted image 20231124105733.png]]
+![[Pasted image 20231124105744.png]]
+To bundle the `lodash` dependency with `index.js`, we'll need to install the library locally:
+`npm install --save lodash`
+![[Pasted image 20231124110015.png]]
+Now let's import `lodash` in our script in the `src/index.js` file:
+![[Pasted image 20231124110136.png]]
+Now since we'll be bundling our scripts, we have to update our `index.html` file. Let's remove the lodash `<script>`, as we now `import` it, and modify the other `<script>` tag to load the bundle, instead of the raw `./src` file:
+![[Pasted image 20231124110324.png]]
+In this setup, `index.js` explicitly requires `lodash` to be present, and binds it as `_` (no global scope pollution). By stating what dependencies a module needs, webpack can use this information to build a dependency graph. It then uses the graph to generate an optimized bundle where scripts will be executed in the correct order.
+
+With that said, let's run `npx webpack`, which will take our script at `src/index.js` as the entry point, and will generate `dist/main.js` as the output. The `npx` command, which ships with Node 8.2/npm 5.2.0 or higher, runs the webpack binary (`./node_modules/.bin/webpack`) of the webpack package we installed in the beginning:
+![[Pasted image 20231124110816.png]]
+**TIP: Your output may vary, but if the build is successful then you are good to go**
+
+#### Modules
+The `import` and `export` statements have been standardized in ES2015. They are supported in most of the browsers at the moment, however there are some browsers that don't recognize the new syntax. But don't worry, webpack does support them out of the box.
+
+Behind the scenes, webpack actually "[[transpiles]]" the code so that older browsers can also run it. If you inspect `dist/main.js`, you might be able to see how webpack does this, it's quite ingenious! Besides `import` and `export`, webpack supports various other module syntaxes as well, see [Module API](https://webpack.js.org/api/module-methods) for more information.
+
+#### Using a Configuration
+As of version 4, webpack doesn't require any configuration, but most projects will need a more complex setup, which is why webpack supports a configuration file. This is much more efficient than having to manually type a lot of commands in the terminal, so let's create one:
+![[Pasted image 20231124111319.png]]
+A configuration file allows far more flexibility than CLI usage. We can specify loader rules, plugins, resolve options and many other enhancements this way.
+
+#### NPM Scripts
+Given it's not particularly fun to run a local copy of webpack from the CLI, we can set up a little shortcut. Let's adjust our `package.json` by adding an npm script:
+![[Pasted image 20231124111819.png]]
+Now the `npm run build` command can be used in place of the `npx` command we used earlier. Note that within `scripts` we can reference locally installed npm packages by name the same way we did with `npx`. This convention is the standard in most npm-based projects because it allows all contributors to use the same set of common scripts.
+
+Now run the following command and see if your script alias works:
+![[Pasted image 20231124112039.png]]
+
+#### Conclusion
+Now that you have a basic build together you should move on to the next guide [`Asset Management`](https://webpack.js.org/guides/asset-management) to learn how to manage assets like images and fonts with webpack. At this point, your project should look like this:
+
+![[Pasted image 20231124112114.png]]
 
 ## Transpiling code for new language features (babel)
 
@@ -114,7 +169,7 @@ Note that we're installing 3 separate packages as dev dependencies:
 
 We can configure webpack to use `babel-loader` by editing the `webpack.config.js` file as follows:
 ![[Pasted image 20231119162758.png]]
-This syntax looks confusing, but fortunately it's not something we'll be editing often. Basically, we are telling webpack to look for an .js files (excluding ones in the `node_modules` folder) and apply babel transpilation using `babel-loader` with the `@babel/preset-env` preset. 
+This syntax looks confusing, but fortunately it's not something we'll be editing often. Basically, we are telling webpack to look for any .js files (excluding ones in the `node_modules` folder) and apply babel transpilation using `babel-loader` with the `@babel/preset-env` preset. 
 
 Now that everything's set up, we can start writing ES2015 features in our JavaScript. Here's an example of an ES2015 template string in the `index.js` file:
 ![[Pasted image 20231119164151.png]]
@@ -147,6 +202,76 @@ Now you can start your derv server by running the command:
 This will automatically open the `index.html` website in your browser with an address of `localhost:8080` (by default). Any time you change your JavaScript in `index.js`, webpack-dev-server will rebuild its own bundled JavaScript and refresh the browser automatically. This is a useful time saver, as it allows you to keep your focus on the code instead of having to continually switch contexts between the code and the browser to see new changes.
 
 This is only scratching the surface, there are plenty more options with both webpack and webpack-dev-server (which you can read about [here](https://webpack.js.org/guides/development/)). You can of course make npm scripts for running other tasks as well, such as converting Sass to CSS, compressing images, running tests — anything that has a command line tool is fair game.
+
+## ES6 Modules
+Now that we understand what webpack is doing it's time to discuss the module syntax. There are only 2 components to it - `import` and `export`.
+
+The import statement is the same thing that you used during the webpack tutorial so it should be familiar:
+![[Pasted image 20231126111123.png]]
+There are many benefits to writing your code in modules. One of the most compelling is code reuse. If, for instance, you have written some functions that manipulate the DOM in a specific way, putting all of those into their own file as a "module" means that you can copy that file and reuse it very easily!
+
+- With the introduction of ES6 modules, the module pattern (IIFEs) is not needed anymore, though you might still encounter them in the wild. When using ES6 modules, only what is exported can be accessed in other modules by importing. Additionally, any declarations made in a module are not automatically added to the global scope. By using ES6 modules, you can keep different parts of your code cleanly separated, which makes writing and maintaining your code much easier and less error-prone. Keep in mind that you can definitely export constructors, classes, and factory functions from your modules.
+
+To pull it all together, let's write a simple module and then include it in our code. We are going to continue from where the webpack tutorial left off. Before beginning, your file directory should look something like this:
+![[Pasted image 20231126111651.png]]
+
+There are two different ways to use exports in your code: named exports and default exports. Which option you use depends on what you are exporting. Take a moment to look at the [MDN documentation about the export declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) and the [MDN documentation about the import declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) which give great examples for the different syntax on import and export.
+
+#### exports
+
+**Named exports**
+Every module can have two different types of export, `named export` and `default export`. You can have multiple named exports per module but only one default export. 
+![[Pasted image 20231126112559.png]]
+After the `export` keyword, you can use let, const, and var declarations, as well as function or class declarations. You can also use the `export{ name1, name2 }` syntax to export a list of names declared elsewhere. Note that `export{}` does not export an empty object - it's a no-op declaration that exports nothing (an empty name list).
+
+Export declarations are not subject to `temporal dead zone` rules. You can declare that module exports `x` before the name `x` itself is declared.
+![[Pasted image 20231126112927.png]]
+**Default exports**
+![[Pasted image 20231126113002.png]]
+The `export default` syntax allows any expression.
+![[Pasted image 20231126113026.png]]
+As a special case, functions and classes are exported as declarations, not expressions, and these declarations can be anonymous. This means functions will be hoisted.
+![[Pasted image 20231126113148.png]]
+
+Named exports are useful when you need to export several values. When importing this module, named exports must be referred to by the exact same name (optionally renaming it was `as`), but the default export can be imported with any name. For example:
+![[Pasted image 20231126113338.png]]
+![[Pasted image 20231126113408.png]]
+
+#### imports
+
+`import` declarations can only be present in modules, and only at the top-level (i.e. not inside blocks, functions, etc.). If an `import` declaration is encountered in non-module contexts (for example, `<script>` tags without `type="module"`, `eval`, `new Function`, which all have "script" or "function body" as parsing goals), a `SyntaxError` is thrown. To load modules in non-module contexts, use the [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) syntax instead.
+
+All imported bindings cannot be in the same scope as any other declaration, including `let`, `const`, `class`, `function`, `var`, and `import` declaration.
+
+`import` declarations are designed to be syntactically rigid (for example, only string literal specifiers, only permitted at the top-level, all bindings must be identifiers), which allows modules to be statically analyzed and linked before getting evaluated. This is the key to making modules asynchronous by nature, powering features like [top-level await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#top_level_await).
+
+**Forms of import declarations**
+There are four forms of `import` declarations:
+- Named import: `import ( export1, export2 } from "module-name";`
+- Default import: `import defaultExport from "module-name";`
+- Namespace import: `import * as name from "module-name";`
+- Side effect import: `import "module-name"`
+
+**Name import**
+Given a value named `myExport` which has been exported from the module `my-module` either implicitly as `export * from "another.js"` or explicitly using the `export` statement, this inserts `myExport` into the current scope.
+![[Pasted image 20231126114317.png]]
+
+**Default import**
+Default exports need to be imported with the corresponding default import syntax. This simplest version directly imports the default:
+![[Pasted image 20231126114554.png]]
+Sin the default export doesn't explicitly specify a name, you can give the identifier any name you like.
+
+It is also possible to specify a default import with the namespace imports or named imports. In such cases, the default import will have to be declared first. For instance:
+![[Pasted image 20231126114806.png]]
+
+**Namespace import**
+![[Pasted image 20231126114934.png]]
+
+**Side effect import**
+![[Pasted image 20231126115047.png]]
+
+
+
 
 ## Conclusion
 So this is modern JavaScript in a nutshell. We went from plain HTML and JS to using **a package manager** to automatically download 3rd party packages, **a module bundler** to create a single script file, a **transpiler** to use future JavaScript features, and **a task runner** to automate different parts of the build process. Definitely a lot of moving pieces here, especially for beginners. Web development used to be a great entry point for people new to programming precisely because it was so easy to get up and running; nowadays it can be quite daunting, especially because the various tools tend to change rapidly.
@@ -184,6 +309,8 @@ Modern JavaScript can definitely be frustrating to work with as it continues to 
 	- Module bundlers help address this issues by combining all necessary modules into a single file or a few files. This can reduce the number of network requests and improve the loading time of web pages. Additionally, module bundlers often include features such as code minification and tree shaking, which further optimize the size of the bundled code by removing unused or redundant portions.
 		- Side note: [[tree shaking]] is a technique used in JS module bundlers to eliminate dead (unused or unreachable) code from the final bundled output. The term "tree shaking" comes from the concept of shaking a tree to make dead leaves fall, leaving only the necessary ones.
 #### Explain what the concepts "entry" and "output" mean as relates to webpack.
+
+Webpack looks for an entry .js file, usually in the `src` directory. It then takes the code, imports, etc. and "outputs" them into a .js file located in the `dist` directory. This is the file that is linked in your html script.
 #### Briefly explain what a development dependency is.
 - A "development dependency" refers to a software package or library that is necessary for the development and build process of a project but is not required for the runtime execution of the application. These dependencies are tools, libraries, or modules that assist developers during the development phase, such as in building, testing and maintaining a codebase.
 - When someone is working on a project, they install both regular dependencies and development dependencies. However, when the application is deployed or run in a production environment, only the regular dependencies are typically installed.
@@ -213,5 +340,8 @@ Modern JavaScript can definitely be frustrating to work with as it continues to 
 #### Describe how to write an npm automation script.
 - The script has to be added to the `package.json` file, then it can be run from the command line. For example, `npm run build`.
 #### Explain one of the main benefits of writing code in modules.
+Code reuse! If you have some functions that do something specific, you can put those all into their own file as a "module". It can then be copied and reused very easily.
+
+There are also the same benefits as when using factory functions or the module pattern (the module pattern and ES6 modules are not the same thing; this naming convention is very frustrating).
 #### Explain "named" exports and "default" exports.
 
