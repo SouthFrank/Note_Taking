@@ -30,19 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "ccf916753daedbab",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "WebDev/images/Pasted image 20231127131442.png"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -108,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebDev/images/Pasted image 20231127131442.png",
+                "file": "WebDev/Basics/JavaScript Basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebDev/images/Pasted image 20231127131442.png",
+                "file": "WebDev/Basics/JavaScript Basics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebDev/images/Pasted image 20231127131442.png"
+                "file": "WebDev/Basics/JavaScript Basics.md"
               }
             }
           }
