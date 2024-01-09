@@ -72,3 +72,4 @@
 - Runs on port 3000 by default
 	- Alternate port can be defined using `json-server --port 3001 --watch db.json`
 - A global installation is not necessary, it can be run from the root directory of your app using the command npm, `npx json-server --port 3001 --watch db.jso`
+- Requires all data to be sent in JSON format. What this means in practice is that the data must be a correctly formatted string and that the quest must contain the `Content-Type` request header with the value `application/json`.
