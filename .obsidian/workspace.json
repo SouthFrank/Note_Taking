@@ -25,14 +25,62 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebDev/Objects/Classes.md",
+                "file": "WebDev/Basics/String Methods.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a226ccc967119765",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/Basics/Booleans.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7fd6051f5262e364",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/General/Tools and Technologies.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "308ce3b33e0de037",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/General/Tools and Technologies.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "866a9e2586fd5c18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/React/Axios and Promises.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -98,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md",
+                "file": "WebDev/React/Axios and Promises.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md",
+                "file": "WebDev/React/Axios and Promises.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebDev/Basics/JavaScript Basics.md"
+                "file": "WebDev/React/Axios and Promises.md"
               }
             }
           }
@@ -159,35 +207,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "704aa2a7daac107a",
+  "active": "866a9e2586fd5c18",
   "lastOpenFiles": [
-    "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
-    "WebDev/images/Pasted image 20231127131442.png",
-    "WebDev/images/Pasted image 20231127131336.png",
-    "WebDev/images/Pasted image 20231127131303.png",
-    "WebDev/images/Pasted image 20231127131225.png",
-    "WebDev/images/Pasted image 20231127131203.png",
-    "WebDev/images/Pasted image 20231127130932.png",
-    "WebDev/images/Pasted image 20231127130906.png",
-    "WebDev/images/Pasted image 20231127120404.png",
-    "WebDev/images/Pasted image 20231127114713.png",
-    "WebDev/images/Pasted image 20231127114247.png",
-    "WebDev/Objects/Classes.md",
-    "WebDev/Modules, npm, Bundlers, Transpilers",
-    "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
-    "WebDev/Objects",
-    "WebDev/Basics/JavaScript Basics.md",
-    "WebDev/Basics/Conditionals & Operators.md",
     "WebDev/General/Tools and Technologies.md",
-    "WebDev/Basics/Array Methods.md",
-    "WebDev/Basics/String Methods.md",
     "WebDev/General/Terms and Phrases.md",
     "WebDev/General/Markdown Keys.md",
     "WebDev/General/languages.md",
+    "WebDev/React/Axios and Promises.md",
+    "Untitled",
+    "WebDev/Basics/JavaScript Basics.md",
+    "WebDev/images/Pasted image 20231115100240.png",
+    "WebDev/Basics/String Methods.md",
+    "WebDev/Basics/Conditionals & Operators.md",
+    "WebDev/Basics/Booleans.md",
+    "WebDev/Basics/Array Methods.md",
+    "WebDev/images/Pasted image 20231205105906.png",
+    "WebDev/images/Pasted image 20231205114906.png",
+    "WebDev/images/Pasted image 20231205114531.png",
+    "WebDev/images/Pasted image 20231205112813.png",
+    "WebDev/images/Pasted image 20231205111615.png",
+    "WebDev/images/Pasted image 20231205111548.png",
+    "WebDev/React/Component state, event handlers.md",
+    "WebDev/images/Pasted image 20231203103114.png",
+    "WebDev/Objects/Classes.md",
+    "README.md",
+    "WebDev/React",
+    "WebDev/Basics/Date Object.md",
+    "WebDev/images/Pasted image 20231203103055.png",
+    "WebDev/images/Pasted image 20231203102952.png",
+    "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
+    "WebDev/Modules, npm, Bundlers, Transpilers",
+    "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
+    "WebDev/Objects",
     "WebDev/General",
     "WebDev/General.md",
     "WebDev/Basics",
-    "README.md",
     "Untitled 1",
     "Pasted image 20231116132510.png.md",
     "WebDev/Objects/prototypes.md"

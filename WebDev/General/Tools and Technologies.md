@@ -55,3 +55,20 @@
 - [[Bower]]:
 	- Bower was historically popular for managing front-end components, such as JavaScript libraries and CSS frameworks. However, it is considered somewhat legacy, and its usage has decreased with the rise of npm and Yarn.
 	- Key features: Front-end package management, versioning, and asset downloading.
+
+#### Vite
+- Vite is a local development server made by the creator of [[Vue.js]], and it is used by default by Vue and for React project templates.
+- Has support for TypeScript and JSX.
+- Focuses on speed and performance.
+- Consists of two major parts:
+	- A development server that provides rich feature enhancements over native ES modules: fast Hot Module Replacement (HMR), pre-bundling, support for TypeScript, JSX, and dynamic import.
+	- A build command that bundles your code with [[Rollup]], pre-configured to output optimized static assets for production.
+
+
+#### JSON Server
+- A tool used in development that can act as your server.
+- Global install:
+	- `npm install -g json-server`
+- Runs on port 3000 by default
+	- Alternate port can be defined using `json-server --port 3001 --watch db.json`
+- A global installation is not necessary, it can be run from the root directory of your app using the command npm, `npx json-server --port 3001 --watch db.jso`

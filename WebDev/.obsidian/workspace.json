@@ -11,11 +11,9 @@
             "id": "c20f5c010e6f584b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "languages.md",
-                "mode": "source",
-                "source": false
+                "file": "images/Pasted image 20231203103114.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages.md",
+                "file": "images/Pasted image 20231203103114.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages.md",
+                "file": "images/Pasted image 20231203103114.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages.md"
+                "file": "images/Pasted image 20231203103114.png"
               }
             }
           }
@@ -146,7 +144,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "753fc9b29d071ca9",
+  "active": "c20f5c010e6f584b",
   "lastOpenFiles": [
     "Terms and Phrases.md",
     "prototypes.md",
