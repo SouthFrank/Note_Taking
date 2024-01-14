@@ -4,18 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "368c43afb80d52be",
+        "id": "6fa9ac558c8b32c0",
         "type": "tabs",
         "children": [
           {
-            "id": "034d8db46cdc7f04",
+            "id": "11fc4b3c8f7f82b4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/General/Application Programming Interfaces (APIs).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "79451a49baa8eb72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WebDev/Basics/Map vs Object.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "WebDev/Basics/Map vs Object.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "WebDev/Basics/Map vs Object.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,14 +137,25 @@
             "type": "leaf",
             "state": {
               "type": "outline",
+              "state": {
+                "file": "WebDev/Basics/Map vs Object.md"
+              }
+            }
+          },
+          {
+            "id": "5a8d10b18032855e",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 546.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -138,36 +168,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "034d8db46cdc7f04",
+  "active": "704aa2a7daac107a",
   "lastOpenFiles": [
+    "WebDev/React/Axios and Promises.md",
+    "WebDev/React/Component state, event handlers.md",
+    "WebDev/React/Hooks.md",
+    "WebDev/General/languages.md",
+    "WebDev/Basics/Regular Expression.md",
+    "WebDev/General/Application Programming Interfaces (APIs).md",
+    "WebDev/Basics/Type Conversion.md",
+    "WebDev/images/Pasted image 20240113114246.png",
+    "WebDev/images/Pasted image 20240113114039.png",
+    "WebDev/images/Pasted image 20240109142849.png",
+    "WebDev/images/Pasted image 20240113114711.png",
+    "WebDev/images/Pasted image 20240113114355.png",
+    "WebDev/images/Pasted image 20240113114323.png",
+    "2024-01-13.md",
+    "2024-01-12.md",
+    "WebDev/Basics/Map vs Object.md",
+    "Calendar.md",
+    "Untitled.canvas",
+    "WebDev/Basics/String Methods.md",
+    "WebDev/Basics/Date Object.md",
+    "WebDev/Basics/JavaScript Basics.md",
+    "WebDev/Basics/Conditionals & Operators.md",
     "WebDev/Basics/Array Methods.md",
     "WebDev/General/Tools and Technologies.md",
-    "WebDev/General/languages.md",
-    "WebDev/React/Axios and Promises.md",
     "WebDev/Basics/Booleans.md",
-    "WebDev/Basics/String Methods.md",
-    "WebDev/Basics/JavaScript Basics.md",
-    "WebDev/General/Application Programming Interfaces (APIs).md",
     "WebDev/General/Markdown Keys.md",
     "WebDev/General/Terms and Phrases.md",
     "WebDev/images/Pasted image 20240109095256.png",
-    "WebDev/React/Hooks.md",
     "WebDev/images/Pasted image 20240109100006.png",
     "WebDev/images/Pasted image 20240109095912.png",
     "Untitled",
     "WebDev/images/Pasted image 20231115100240.png",
-    "WebDev/Basics/Conditionals & Operators.md",
-    "WebDev/images/Pasted image 20231205105906.png",
-    "WebDev/images/Pasted image 20231205114906.png",
-    "WebDev/images/Pasted image 20231205114531.png",
-    "WebDev/images/Pasted image 20231205112813.png",
-    "WebDev/images/Pasted image 20231205111615.png",
-    "WebDev/images/Pasted image 20231205111548.png",
-    "WebDev/React/Component state, event handlers.md",
     "WebDev/Objects/Classes.md",
     "README.md",
     "WebDev/React",
-    "WebDev/Basics/Date Object.md",
     "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
     "WebDev/Modules, npm, Bundlers, Transpilers",
     "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
@@ -176,7 +213,6 @@
     "WebDev/General.md",
     "WebDev/Basics",
     "Untitled 1",
-    "Pasted image 20231116132510.png.md",
-    "WebDev/Objects/prototypes.md"
+    "Pasted image 20231116132510.png.md"
   ]
 }

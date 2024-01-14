@@ -20,5 +20,12 @@ Let's take a look at an example of an effect hook being used with axios:
 
 
 #### Post
+A basic axios POST request, written in a function within React looks like:
+![[Pasted image 20240109142849.png]]
+- A POST request takes two parameter
+	- The address of the location to which in the information is being posted.
+	- The information being posted. In this case an object named noteObject.
+
+
 #### Put
 #### Patch
