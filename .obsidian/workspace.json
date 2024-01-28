@@ -8,26 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "11fc4b3c8f7f82b4",
+            "id": "0a52b0e8b2daf693",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebDev/General/Application Programming Interfaces (APIs).md",
+                "file": "WebDev/Backend/Node.js.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "79451a49baa8eb72",
+            "id": "9eac87c3112f0c06",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "WebDev/Basics/Map vs Object.md",
-                "mode": "source",
-                "source": false
+                "file": "WebDev/images/Pasted image 20240128105414.png"
               }
             }
           }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebDev/Basics/Map vs Object.md",
+                "file": "WebDev/images/Pasted image 20240128105414.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebDev/Basics/Map vs Object.md",
+                "file": "WebDev/images/Pasted image 20240128105414.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebDev/Basics/Map vs Object.md"
+                "file": "WebDev/images/Pasted image 20240128105414.png"
               }
             }
           },
@@ -170,49 +168,50 @@
   },
   "active": "704aa2a7daac107a",
   "lastOpenFiles": [
+    "WebDev/Data Structures/Linked List.md",
+    "WebDev/images/Pasted image 20240128105414.png",
+    "WebDev/images/Pasted image 20240128105347.png",
+    "WebDev/images/Pasted image 20240128105319.png",
+    "WebDev/images/Pasted image 20240128105256.png",
+    "WebDev/images/Pasted image 20240128105206.png",
+    "WebDev/images/Pasted image 20240128105059.png",
+    "WebDev/images/Pasted image 20240128104948.png",
+    "WebDev/images/Pasted image 20240128104625.png",
+    "WebDev/images/Pasted image 20240128103708.png",
+    "WebDev/images/Pasted image 20240128103553.png",
+    "WebDev/Backend/Node.js.md",
+    "WebDev/Data Structures",
+    "WebDev/Backend/Express.md",
+    "WebDev/Basics/Map vs Object.md",
+    "WebDev/Algorithm Techniques/Two Pointer.md",
+    "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
+    "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
+    "WebDev/Objects/prototypes.md",
+    "WebDev/Objects/Object Properties.md",
+    "WebDev/Objects/Classes.md",
     "WebDev/React/Axios and Promises.md",
     "WebDev/React/Component state, event handlers.md",
     "WebDev/React/Hooks.md",
+    "WebDev/Backend/Simple Web Server.md",
+    "WebDev/General/Application Programming Interfaces (APIs).md",
+    "WebDev/Backend",
+    "WebDev/Algorithm Techniques",
     "WebDev/General/languages.md",
     "WebDev/Basics/Regular Expression.md",
-    "WebDev/General/Application Programming Interfaces (APIs).md",
     "WebDev/Basics/Type Conversion.md",
-    "WebDev/images/Pasted image 20240113114246.png",
-    "WebDev/images/Pasted image 20240113114039.png",
-    "WebDev/images/Pasted image 20240109142849.png",
-    "WebDev/images/Pasted image 20240113114711.png",
-    "WebDev/images/Pasted image 20240113114355.png",
-    "WebDev/images/Pasted image 20240113114323.png",
     "2024-01-13.md",
     "2024-01-12.md",
-    "WebDev/Basics/Map vs Object.md",
     "Calendar.md",
     "Untitled.canvas",
     "WebDev/Basics/String Methods.md",
     "WebDev/Basics/Date Object.md",
     "WebDev/Basics/JavaScript Basics.md",
     "WebDev/Basics/Conditionals & Operators.md",
-    "WebDev/Basics/Array Methods.md",
-    "WebDev/General/Tools and Technologies.md",
-    "WebDev/Basics/Booleans.md",
-    "WebDev/General/Markdown Keys.md",
-    "WebDev/General/Terms and Phrases.md",
-    "WebDev/images/Pasted image 20240109095256.png",
-    "WebDev/images/Pasted image 20240109100006.png",
-    "WebDev/images/Pasted image 20240109095912.png",
-    "Untitled",
-    "WebDev/images/Pasted image 20231115100240.png",
-    "WebDev/Objects/Classes.md",
-    "README.md",
     "WebDev/React",
-    "WebDev/Modules, npm, Bundlers, Transpilers/Webpack.md",
     "WebDev/Modules, npm, Bundlers, Transpilers",
-    "WebDev/Modules, npm, Bundlers, Transpilers/ES6 Module.md",
     "WebDev/Objects",
     "WebDev/General",
-    "WebDev/General.md",
     "WebDev/Basics",
-    "Untitled 1",
-    "Pasted image 20231116132510.png.md"
+    "Untitled 1"
   ]
 }
