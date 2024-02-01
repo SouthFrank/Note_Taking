@@ -58,3 +58,25 @@ Let's restart the server (you can shut the server down by pressing _Ctrl+C_ in t
 The _application/json_ value in the _Content-Type_ header informs the receiver that the data is in the JSON format. The _notes_ array gets transformed into JSON with the _JSON.stringify(notes)_ method.
 
 ![[Pasted image 20240126160605.png]]
+
+
+### nodemon
+If we make changes to the code of our applications we have to restart the application to see the changes. We restart the application by first shutting it down by typing `Ctrl+C` and then restarting the application. Compared to the convenient workflow in React where the browser automatically reloaded after changes were made, this feel cumbersome.
+
+The solution to this is nodemon. nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.
+
+Install nodemon as a dev dependency with the command:
+`npm install --save-dev nodemon`
+
+The contents of `package.json` will reflect to show this. We can start our application with nodemon like this:
+`node_modules/.bin/nodemon index.js`
+
+Changes to the application code now cause the server to restart automatically. It's worth noting that even though the backend server restarts automatically, the browser still has to be manually refreshed. This is because unlike when working in React, we don't have the [hot reload](https://gaearon.github.io/react-hot-loader/getstarted/) functionality needed to automatically reload the browser.
+
+The command is long and quite unpleasant, so let's define a dedicated _npm script_ for it in the _package.json_ file:
+![[Pasted image 20240130101430.png]]
+In the script there is no need to specify the _node_modules/.bin/nodemon_ path to nodemon, because _npm_ automatically knows to search for the file from that directory.
+
+We can now start the server in development mode with the command:
+`npm run dev`
+Unlike with the **start** and **test** scripts, we also have to add **run** to the command because it is a non-native script.
